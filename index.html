@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8"><!--para caracteres especiales-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--es para response-->
+        <title>JUANKO</title>
+        <link rel="stylesheet" href="estilos.css">
+
+        
+        <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Oswald&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+        
+        
+    </head>
+    <body>
+        <header>
+
+        
+
+        <div class="container">
+
+             <h1 class="iden">JUANKO</h1><!--titulo-->
+             
+             <button class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        
+             <ul class="horizontal-list"><!--lista desordenada-->
+                 <li><a href="https://www.instagram.com/juanko_bit/reels/">INSTAGRAM</a></li><!--elemento de lista-->
+                 <li><a href="https://www.youtube.com/channel/UC1_AHKFp7CfNuEd_fLffUZA">YOUTUBE</a></li>
+                 <li><a href="https://www.facebook.com/profile.php?id=100076576531230">FACEBOOK</a></li>
+                 <li><a href="https://www.tiktok.com/@juanko_byte">TIKTOK</a></li>
+             </ul>
+        </div>
+        <div class="linea_header"></div>
+        </header>
+        <div class="laimagenes">
+             <!--<img src="imagenes/pcb_pag.png" alt="pcb imagen" class="responsive-image">-->
+             <h3 class="parrafo1">PROYECTOS PCB</h3>
+             <p>No solo implica reunir los componentes en una placa,
+                 se trata optimizar cada espacio y convertir ideas en circuitos funcionales.</p>
+              <a href="https://www.instagram.com/juanko_bit/reels/" class="btn">VER MÁS</a>
+        
+
+        
+            <div class="carousel">
+                <button class="carousel-arrow prev" onclick="previousSlide()">‹</button>
+                <button class="carousel-arrow next" onclick="nextSlide()">›</button>
+                
+                <div class="carousel-track" id="carouselTrack">
+                    <!--clon del ultimo-->
+                    <div class="carousel-slide" onclick="goToProject('proyecto4')">
+                        <img src="imagenes/pcb3.png" alt="PCB Design 4">
+                        <div class="slide-overlay">
+                            <h3 class="slide-title">Audio Amplifier</h3>
+                            
+                        </div>
+                    </div>
+                    <!--slides originales-->
+                    <div class="carousel-slide" onclick="goToProject('proyecto2')">
+                        <img src="imagenes/pcb1.png" alt="PCB Design 2">
+                        <div class="slide-overlay">
+                            <h3 class="slide-title">Control De Motor L293D</h3>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide" onclick="goToProject('proyecto3')">
+                        <img src="imagenes/pcb2.png" alt="PCB Design 3">
+                        <div class="slide-overlay">
+                            <h3 class="slide-title">Display 4 Digitos-7seg</h3>
+                            
+                        </div>
+                    </div>
+                    
+                    <div class="carousel-slide" onclick="goToProject('proyecto4')">
+                        <img src="imagenes/pcb3.png" alt="PCB Design 4">
+                        <div class="slide-overlay">
+                            <h3 class="slide-title">Tarjeta De Proyectos PIC</h3>
+                            
+                        </div>
+                    </div>
+                    <!--clon del primero-->
+                    <div class="carousel-slide" onclick="goToProject('proyecto2')">
+                        <img src="imagenes/pcb1.png" alt="PCB Design 2">
+                        <div class="slide-overlay">
+                            <h3 class="slide-title">Sensor IoT</h3>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+            
+            
+        
+         </div>
+
+
+        
+        <div class="img_esp">
+            <!--<img src="imagenes/IMG_20240707_152347640.jpg" alt="esp_protoboard" class="responsive-image">-->
+            <h3 class="esp32">CONOCE EL MÓDULO ESP 32</h3>
+            <a href="https://www.youtube.com/channel/UC1_AHKFp7CfNuEd_fLffUZA"class="btn2">VER MÁS</a>
+        </div>
+
+        <div class="img_pic">
+            <!--<img src="imagenes/IMG_20240707_152347640.jpg" alt="esp_protoboard" class="responsive-image">-->
+            <h3 class="pic">MICROCONTROLADORES PIC</h3>
+            <a href="https://www.youtube.com/channel/UC1_AHKFp7CfNuEd_fLffUZA"class="btn3">VER MÁS</a>
+        </div>
+
+        <div class="scrollme" onclick="scrollToNext()"> 
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" 
+            stroke-width="2" stroke-linecap="round"> <polyline points="7,10 12,15 17,10"></polyline> </svg> 
+             </div>
+            
+        
+        
+        
+        
+        <script src="juanko.js"></script>
+
+        
+    </body>
+    </html>

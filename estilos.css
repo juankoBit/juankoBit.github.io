@@ -1,0 +1,652 @@
+body {
+    
+    background-color: lightblue;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    margin-left: 0px;
+    margin-right: 0px;
+    
+}
+header {
+            background: rgb(0, 0, 0);
+           
+            position:sticky;
+           
+            width: 100%;
+            line-height: 100%;
+            top: 0;
+            
+            z-index: 1001;
+            padding:0%;
+            
+        }
+
+.container {
+    
+    padding-top: 17px;
+    padding-bottom: 17px;
+    position:relative;
+    display:flex;
+    align-items: center;
+    justify-content:space-between;
+    z-index: 1000;
+    
+}
+
+h1 {
+    margin-right: 0px; /* Espacio entre el título y la lista */
+}
+.linea_header
+
+     {
+    background:linear-gradient(to right,black,rgb(194, 193, 193),black);
+    z-index: 1001;
+    width: 100%;
+    height: 1px;
+    position: absolute;
+}
+
+
+.hamburger {/*esto esta invisible hasta que 50%*/
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 2px;
+            padding-right:4%;
+            background: none;
+            border: none;
+            z-index: 100;
+        }
+
+.hamburger span {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 2px 0;
+            transition: 0.3s;
+            border-radius: 3px;
+        }
+
+/* Animación del botón hamburguesa cuando está activo */
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
+        }        
+
+
+
+ul.horizontal-list {
+    letter-spacing: 2px;
+    z-index: 1;
+    font-family: Impact;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;/*esto es para poner horizontal*/
+}
+
+ul.horizontal-list li {
+    
+    margin-right: 25px; /* Espacio entre los elementos de la lista */
+}
+ul.horizontal-list li a{
+    text-decoration: none;
+    color: #fcf9f9;
+    position: relative;
+    overflow: hidden;
+    transition: color 0.3s;
+}
+
+ul.horizontal-list li a::after{
+    content: '';
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    bottom: -3px;
+    left: 0px;
+    
+    background-color: #fcfafa;
+    transition: width 0.2s ease-out;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+}
+ul.horizontal-list li a:hover::after{
+    width: 100%;
+    transform: scaleX(1);
+    transform-origin: bottom right;
+    
+    
+    
+}
+
+.btn{
+    
+    color:rgb(248, 247, 246);
+    text-decoration: none;
+    
+    font-family: Impact; 
+    padding-left: 45px; 
+    padding-right: 45px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: rgba(238, 241, 241, 0);
+    margin: 10px;
+    /*border: 3px solid rgba(41, 180, 204, 0.849);*/
+    border:2px solid #02ddfa;
+    
+    
+    
+    position: absolute;
+    top: 480px;/*480*/
+    left: 5%;
+    overflow :hidden;/*es para que se oculte y solo se vea en la caja*/
+    z-index: 1;
+    
+}
+.btn:hover{
+    color:black;
+    
+    
+}
+a.btn::after {
+    z-index: -1; /*el index es para posiscionar por capas de acuerdo al numero que le ponmgas*/
+    content: '';
+    position: absolute;
+    width:100%;
+    height: 0%;
+    bottom: -100%;
+    left: 0px;
+    
+    background-color: #f7f4f4;
+    transition: bottom 0.2s ease-out;
+    transform: scale(0);
+    transform-origin:bottom;
+}
+a.btn:hover::after{
+    
+    height: 100%;
+    transform: scaleX(1);
+    transform-origin:bottom;
+    bottom: 0%;
+}
+
+/*imagenes*/
+.laimagenes {
+    background-image:url("imagenes/fondopcb.png");
+    background-size:cover;
+    background-color: rgb(18, 19, 48);
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    margin-top: 0px;
+    position:relative;
+    align-content: center;
+    justify-content: center;
+    height: 100vh; /* O ajusta la altura según tus necesidades */
+     
+    overflow-x:visible;/*esto hace que se quite el scrol horizontal*/
+    
+}
+.laimagenes p{
+    position:absolute;
+    
+    color: #f6f8f8;
+    top: 42%;
+    left: 5%;
+    width: 480px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 25px;
+    font-weight: 300;
+    
+}
+
+/* Arrow Navigation */
+        .carousel-arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(81, 194, 169, 0.384);
+            backdrop-filter: blur(10px);
+            border: none;
+            color: white;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 10;
+        }
+
+        .carousel-arrow:hover {
+            background: rgba(0, 212, 255, 0.2);
+            transform: translateY(-50%) scale(1.1);
+        }
+
+        .carousel-arrow.prev {
+            left: 20px;
+        }
+
+        .carousel-arrow.next {
+            right: 20px;
+        }
+
+
+/* Carousel Container */
+        
+
+
+        .carousel {
+             
+             
+            max-width: 800px;
+            aspect-ratio:16/9 ;
+            position:relative;
+            
+            margin-top: 7%;
+            margin-right: -40%;
+            justify-content: center;
+            display:flex;
+            align-items: center;
+             height: 60%;
+           
+            
+            
+            overflow: hidden;/*es importante esto hace que se vea solo una diapositiva 
+            /*box-shadow: 0 10px 60px rgba(34, 216, 216, 0.555);*/
+        }
+
+        .carousel-track {
+            display: flex;
+            width: 300%;/*por cantidad de imagenes*/
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+            cursor: pointer;
+            overflow: hidden;
+            
+        }
+
+        .carousel-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+            
+        }
+        
+
+        .carousel-slide:hover img {
+            transform: scale(1.05);
+        }
+
+        .slide-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 30px;
+            color: white;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+        }
+
+        .carousel-slide:hover .slide-overlay {
+            transform: translateY(0);
+        }
+
+        .slide-title {/*titulo diapositiva*/
+            font-family: oswald;
+            font-size: 1.5rem;
+            font-weight:100;
+            margin-bottom: 8px;
+            text-align: center;
+        }
+
+        
+        /*apartadooooo*/
+
+         @media (max-width: 1100px   ) {
+            .carousel {
+             
+            
+             height: 40%;
+            
+            
+            }
+         }
+         /* RESPONSIVE - Solo cuando la ventana es pequeña */
+        @media (max-width: 768px   ) {
+            /* Mostrar botón hamburguesa solo en móviles */
+            .hamburger {
+                display: flex;
+            }  
+             /* Ocultar/mostrar menú en móviles */
+                .horizontal-list {
+                position: fixed;
+                top: 60px;
+                left: -100%;
+                height: 30vh;
+                width: 100%;
+                background-color: #0a0a0a;
+                display:block;
+                flex-direction: column;
+                gap: 1.5rem;
+                text-align: center;
+                justify-content: center;
+                align-items: center;
+                transition: left 0.3s ease;
+                z-index:-1;
+                }
+               /**  font-size: 1.2rem;
+                padding: 1rem 2rem;
+            }**/
+                 .laimagenes p {
+                    max-width: 80%;
+                    
+                   
+                    margin-left: 5%;
+                    margin-top:-10rem;
+                    text-align: center;
+                    font-size:  20px; 
+                    
+                    
+                    
+                    
+                }
+
+            .horizontal-list.active {
+                left: 0;
+            }
+
+            .laimagenes .parrafo1 {
+               /* margin-left:-20%;*/
+               font-family: oswald;
+               letter-spacing:3px ;
+               top: 2%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                
+                font-weight: 900;/*ancho*/
+               width: 270px;
+              
+               font-size: 2.2rem;
+               /*position: relative;*/
+               color:#02ddfa;
+             
+            }
+            .laimagenes .btn{
+                margin-top: -3rem;
+                
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .laimagenes{
+                
+                height:100vh;
+                background-size:cover;
+                }
+            
+           .carousel {
+            height: 35%;
+            margin-left: -40%;
+        max-width: 100%; /* Usa casi todo el ancho disponible */
+        /*margin: 0 auto; /* Centra horizontalmente */
+        /*margin-top: auto; /* Permite posicionamiento flexible */
+        position:relative;
+        top: 60vh; /* Posiciona en la parte baja de la ventana */
+        transform: translateY(-50%); /* Ajusta para que quede en la parte baja */
+             }
+    
+           .carousel-track {
+            width: 300%; /* Mantiene el ancho para las imágenes */
+              }
+   
+          
+               }  
+
+         
+
+.img_esp{
+    background-color: blue;
+    background-image: url("imagenes/IMG_20240707_152347640.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-content: center;
+    height: 100vh;
+    overflow-x: hidden;
+    margin-top: 0px;
+    /*width:auto; 
+    position:absolute;*/
+    
+    /*overflow: hidden;/*esto hace que no se respete siempre el ancho de la pagina*/
+    
+    
+}
+
+
+
+.iden{
+    
+    font-family: 'Orbitron';
+    font-weight: 700;
+    padding-left:5%;
+    margin-top: 5px;/*esto esta definiendo el ancho del header*/
+    margin-bottom: 5px;
+    color: #f7f4f4;
+    z-index: 1;
+    letter-spacing: 2px;
+    
+}
+.parrafo1{
+    background: rgba(19, 18, 18, 0.664);
+    
+    font-family:'Oswald';
+    letter-spacing: 5px;
+    line-height: 1.2;
+    font-size :4.5rem;
+    max-width: 380px;
+    margin-bottom: 500px;
+    left:5%;
+    top: 8%;/*250*/
+    
+    position: absolute;
+    z-index: 2;
+    color:#02ddfa;
+}
+.btn2{
+    
+    color:rgb(248, 247, 246);
+    text-decoration: none;
+    
+    font-family: Impact; 
+    padding-left: 45px; 
+    padding-right: 45px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: rgba(238, 241, 241, 0);
+    margin: 10px;
+    border: 5px solid rgb(121, 236, 236);
+    position: absolute;
+    top: 400px;
+    right:50px ;
+    overflow :hidden;/*es para que se oculte y solo se vea en la caja*/
+    z-index: 1;
+    
+}
+.btn2:hover{
+    color:black;
+    
+    
+}
+a.btn2::after {
+    z-index: -1; /*el index es para posiscionar por capas de acuerdo al numero que le ponmgas*/
+    content: '';
+    position: absolute;
+    width:100%;
+    height: 0%;
+    bottom: -100%;
+    left: 0px;
+    
+    background-color: #f7f4f4;
+    transition: bottom 0.2s ease-out;
+    transform: scale(0);
+    transform-origin:bottom;
+}
+a.btn2:hover::after{
+    
+    height: 100%;
+    transform: scaleX(1);
+    transform-origin:bottom;
+    bottom: 0%;
+}
+.esp32{
+    margin-right: 0px;
+    padding-right: 20px;
+    text-align: right;
+    color: #02ddfa;
+    position: absolute;
+    top: 200px;
+    right: 50px;  
+
+    background: rgba(19, 18, 18, 0.664);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size :50px;
+    width: 270px;
+    margin-left: 50px;
+    margin-top: 0px;
+    position: absolute;
+    z-index: 1;
+    
+}
+
+.img_pic{
+    background-color: blue;
+    background-image: url("imagenes/picrojo.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    align-content: center;
+    height: 100vh;
+    overflow-x: hidden;
+    margin-top: 0px;
+    /*width:auto; 
+    position:absolute;*/
+    
+    /*overflow: hidden;/*esto hace que no se respete siempre el ancho de la pagina*/
+    
+    
+}
+
+.btn3{
+    
+    color:rgb(248, 247, 246);
+    text-decoration: none;
+    
+    font-family: Impact; 
+    padding-left: 45px; 
+    padding-right: 45px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background: rgba(238, 241, 241, 0);
+    margin: 10px;
+    border: 5px solid rgb(121, 236, 236);
+    position: absolute;
+    top: 400px;
+    right:50px ;
+    overflow :hidden;/*es para que se oculte y solo se vea en la caja*/
+    z-index: 1;
+    
+}
+.btn3:hover{
+    color:black;
+    
+    
+}
+a.btn3::after {
+    z-index: -1; /*el index es para posiscionar por capas de acuerdo al numero que le ponmgas*/
+    content: '';
+    position: absolute;
+    width:100%;
+    height: 0%;
+    bottom: -100%;
+    left: 0px;
+    
+    background-color: #f7f4f4;
+    transition: bottom 0.2s ease-out;
+    transform: scale(0);
+    transform-origin:bottom;
+}
+a.btn3:hover::after{
+    
+    height: 100%;
+    transform: scaleX(1);
+    transform-origin:bottom;
+    bottom: 0%;
+}
+.pic{
+    background: rgba(19, 18, 18, 0.664);
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    font-size :50px;
+    width: 550px;
+    
+    left:5%;
+    top: 33%;/*250*/
+    position: absolute;
+    z-index: 1;
+    color:#02ddfa;
+}
+
+/* CSS - Estilos del ScrollMe */ 
+.scrollme { 
+    color: antiquewhite;
+    position: absolute; 
+    bottom: 40px; left: 50%; 
+    transform: translateX(-50%); 
+    cursor: pointer; 
+    opacity: 0.6; 
+    transition: all 0.3s ease; 
+    animation: scrollPulse 2s infinite; } 
+    
+.scrollme:hover { 
+    opacity: 1; 
+    transform: translateX(-50%) translateY(-3px); } 
+.scrollme svg {
+     width: 55px; height: 55px; display: block; } 
+.scrollme-text { 
+    font-size: 0.75rem; 
+    font-weight: 400; 
+    letter-spacing: 1px; 
+    text-transform: uppercase; 
+    margin-top: 12px; 
+    opacity: 0.6; 
+    text-align: center; } 
+    
+/* Animación */ @keyframes 
+    scrollPulse { 
+                 0%, 100% 
+                 { transform: translateX(-50%) translateY(0); opacity: 0.6; } 50% 
+                 { transform: translateX(-50%) translateY(-5px); opacity: 1; } }
