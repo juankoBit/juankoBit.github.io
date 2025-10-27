@@ -198,7 +198,7 @@ a.btn:hover::after{
     position:absolute;
     
     color: #f6f8f8;
-    top: 42%;
+    top: 43%;
     left: 5%;
     width: 480px;
     font-family: 'Raleway', sans-serif;
@@ -359,7 +359,7 @@ a.btn:hover::after{
                     
                    
                     margin-left: 5%;
-                    margin-top:-10rem;
+                    margin-top:-11rem;
                     text-align: center;
                     font-size:  20px; 
                     
@@ -389,7 +389,7 @@ a.btn:hover::after{
              
             }
             .laimagenes .btn{
-                margin-top: -3rem;
+                margin-top: -4rem;
                 
                 top: 50%;
                 left: 50%;
